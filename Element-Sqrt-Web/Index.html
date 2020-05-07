@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SquareRoot</title>
+  <base href="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="./assets/squareroot.js"></script>
+</head>
+<body>
+
+  <input id=inputBox name="inputBox" type="number" placeholder="0">
+  <button onclick="getValues();">Calculate</button>
+  <custom-square-root id="sqrtComponent"></custom-square-root>
+
+
+  <script>
+    const sqrt= document.querySelector('custom-square-root');
+    sqrt.addEventListener('result',(event) =>{
+    console.log(`"result" emitted: ${event.detail}`); 
+     });
+
+     function getValues()
+     {
+      document.getElementById('sqrtComponent').inputvalue = getTextBoxValue('inputBox');
+     }
+
+     function getTextBoxValue(textBoxId)
+     {
+         return document.getElementById(textBoxId).value;
+     }
+  </script>
+
+</body>
+</html>
